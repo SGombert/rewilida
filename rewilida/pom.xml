@@ -35,13 +35,13 @@
 			<artifactId>dkpro-core-opennlp-asl</artifactId>
 			<version>2.0.0</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.dkpro.core</groupId>
 			<artifactId>dkpro-core-matetools-gpl</artifactId>
 			<version>2.0.0</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.dkpro.core</groupId>
 			<artifactId>dkpro-core-corenlp-gpl</artifactId>
@@ -60,12 +60,12 @@
 			<artifactId>dkpro-core-textcat-asl</artifactId>
 			<version>2.0.0</version>
 		</dependency>
-		
+
 		<dependency>
-		    <groupId>org.apache.jena</groupId>
-		    <artifactId>apache-jena-libs</artifactId>
-		    <version>3.14.0</version>
-		    <type>pom</type>
+			<groupId>org.apache.jena</groupId>
+			<artifactId>apache-jena-libs</artifactId>
+			<version>3.14.0</version>
+			<type>pom</type>
 		</dependency>
 
 	</dependencies>
@@ -110,6 +110,57 @@
 					</archive>
 				</configuration>
 			</plugin>
+
+
+			
+			<plugin>
+
+				<groupId>org.apache.maven.plugins</groupId>
+
+				<artifactId>maven-shade-plugin</artifactId>
+
+				<version>2.4.3</version>
+
+
+				<executions>
+
+
+					<execution>
+
+						<phase>package</phase>
+
+
+						<goals>
+
+							<goal>shade</goal>
+
+						</goals>
+
+
+						<configuration>
+
+
+							<transformers>
+
+
+								-
+								<transformer
+									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+
+									<mainClass>com.sebastian.gombert.rewilida.core.Main</mainClass>
+
+								</transformer>
+
+							</transformers>
+
+						</configuration>
+
+					</execution>
+
+				</executions>
+
+			</plugin>
+
 		</plugins>
 	</build>
 </project>
