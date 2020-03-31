@@ -1,0 +1,11 @@
+prefix dbpedia: <http://dbpedia.org/resource/>
+prefix dbo: <http://dbpedia.org/ontology/>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+select ?article ?name ?abstract where {
+  ?article rdfs:label "[[ENT]]"@LANG .
+  ?article rdfs:label ?name .
+  ?article dbo:abstract ?abstract .
+  filter(langMatches(lang(?abstract),"LANG") && langMatches(lang(?name),"LANG"))
+}
+limit 100

@@ -1,0 +1,11 @@
+   <div id="map" style="width: 400px; height: 400px"></div> 
+
+   <script type="text/javascript"> 
+      var myOptions = {
+         zoom: 8,
+         center: new google.maps.LatLng([[LATLONG]]),
+         mapTypeId: google.maps.MapTypeId.ROADMAP
+      };
+
+      var map = new google.maps.Map(document.getElementById("map"), myOptions);
+   </script> 

@@ -1,0 +1,11 @@
+prefix dbpedia: <http://dbpedia.org/resource/>
+prefix dbo: <http://dbpedia.org/ontology/>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+select ?rel ?label where {
+  ?article rdfs:label "[[ENT]] ([[DISAMBIG]])"@LANG .
+  ?article dbo:wikiPageDisambiguates ?rel .
+  ?rel rdfs:label ?label .
+  filter(langMatches(lang(?label),"LANG"))
+}
+limit 100
