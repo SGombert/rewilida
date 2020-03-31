@@ -334,7 +334,7 @@ public class ToHTMLConsumer extends JCasAnnotator_ImplBase {
 				}
 				
 				j++;
-				System.out.println(j + "/" + lemmata.size());
+				//System.out.println(j + "/" + lemmata.size());
 			}
 			
 			for (NamedEntityContainer cont : neContainers) {
@@ -353,14 +353,14 @@ public class ToHTMLConsumer extends JCasAnnotator_ImplBase {
 				}
 			}
 			
-			System.out.println("Candidates: " + this.candidates);
-			System.out.println("Accepted: " + this.accepted);
+			//System.out.println("Candidates: " + this.candidates);
+			//System.out.println("Accepted: " + this.accepted);
 			
-			System.out.println("NE Candidates: " + this.neCandida);
-			System.out.println("NE Accepted: " + this.neAcceppted);
+			//System.out.println("NE Candidates: " + this.neCandida);
+			//System.out.println("NE Accepted: " + this.neAcceppted);
 			
-			System.out.println("Lilelihood Candidates: " + this.likelihoodCandida);
-			System.out.println("Likelihood Accepted: " + this.likelihoodAccepted);
+			//System.out.println("Lilelihood Candidates: " + this.likelihoodCandida);
+			//System.out.println("Likelihood Accepted: " + this.likelihoodAccepted);
 			
 			((ObservableList<TextDocument>)ApplicationState.APPLICATION_StATE.getObject("TEXTS")).add(doc);
 
